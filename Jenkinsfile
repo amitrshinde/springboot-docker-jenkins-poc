@@ -3,8 +3,8 @@ pipeline{
     stages{
         stage("Check Environment Variables"){
             steps{
-                echo 'PATH = ${PATH}'
-                sh 'M2_HOME = ${M2_HOME}'
+                echo "PATH = ${PATH}"
+                echo "M2_HOME = ${M2_HOME}"
             }
         }
     }
