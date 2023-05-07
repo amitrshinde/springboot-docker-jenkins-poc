@@ -1,10 +1,10 @@
 pipeline{
     agent any
     stages{
-        stage("build"){
+        stage("Check Environment Variables"){
             steps{
-                echo 'Hello Jenkins'
-                sh 'java -version'
+                echo 'PATH = ${PATH}'
+                sh 'M2_HOME = ${M2_HOME}'
             }
         }
     }
