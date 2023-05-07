@@ -7,6 +7,11 @@ pipeline{
         stage("Check Environment Variables"){
             steps{
                 echo "PATH = ${PATH}"
+                echo "M2_HOME = ${M2_HOME}"
+            }
+        }
+        stage("Maven Build"){
+            steps{
                 sh "mvn clean package"
             }
         }
