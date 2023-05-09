@@ -16,5 +16,11 @@ pipeline{
 
             }
         }
+
+        stage("Build Docker Image"){
+            steps{
+                sh "docker build -t springboot-docker-jenkins-poc:latest ."
+            }
+        }
     }
 }
