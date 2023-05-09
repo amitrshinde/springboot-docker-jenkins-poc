@@ -1,8 +1,7 @@
 pipeline{
     agent any
     tools{
-            maven 'Maven-3.9.1',
-            docker 'Docker-latest'
+            maven 'Maven-3.9.1'
     }
     stages{
         stage("Check Environment Variables"){
@@ -19,6 +18,9 @@ pipeline{
         }
 
         stage("Build Docker Image"){
+            agent{
+                    docker { image 'node:18.16.0-alpine' }
+            }
             steps{
                 sh "docker build -t springboot-docker-jenkins-poc:latest ."
             }
