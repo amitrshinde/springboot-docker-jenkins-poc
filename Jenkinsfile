@@ -13,6 +13,8 @@ pipeline{
         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
+                sh "cd target"
+                sh "ls -ltr"
             }
         }
     }
